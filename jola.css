@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(media/fondo.jpg);
+    background-size: cover;
+}
+
+header{
+    height: 100vh;
+}
+
+.fc {
+    display: flex;
+    justify-content: center;
+    margin-top: -32px;
+}
+
+.fc img {
+    width: 700px;
+
+}
+
+.musica {
+    position: fixed;
+    top: 0;
+}
+
+.gatos {
+    display: flex;
+    justify-content: center;
+    gap: 22rem;
+    animation: gatos 3s forwards;
+    bottom: -100px;
+    opacity: 0;
+}
+
+.gatos img:hover{
+    transform: translateY(-10px);
+}
+
+#sonido {
+    display: none;
+}
+
+@keyframes gatos{
+    0% {
+        bottom: -100px;
+        opacity: 0;
+      }
+      100% {
+        bottom: 0;
+        opacity: 1;
+      }
+}
+
+
+.felicidades {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 200px;
+    height: 80vh;
+}
+
+.felicidades img {
+    width: 400px;
+}
+
+p{
+    margin-top: 200px;
+    width: 500px;
+    padding: 0 12px;
+}
+
+.text1 {
+    background-color: #ffffff49;
+}
+
+.gracias {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 200px;
+    height: 80vh;
+}
+
+.gracias img {
+    width: 400px;
+}

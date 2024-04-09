@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz pumpleaños</title>
+    <link rel="stylesheet" href="jola.css">
+</head>
+<body>
+    <header>
+        <div class="fc">
+            <img src="media/fc.gif" alt="">
+        </div>
+
+        <div class="gatos">
+            <img class="img-gato" data-sonido="media/gato.mp3" src="media/sushi.jpg" alt="">
+            <img class="img-gato" data-sonido="media/gato.mp3" src="media/guchi.jpg" alt="">
+            <img class="img-gato" data-sonido="media/gato.mp3" src="media/lino.jpg" alt="">
+            <audio id="sonido">
+                <source src="" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </header>
+    <div class="musica">
+        <audio id="audio" autoplay loop>
+            <source src="media/musica.mp3.opdownload" type="audio/mpeg">
+        </audio>
+        <button onclick="muteAudio()" id="muteButton">CAAAALLATEEEE</button>
+        <button onclick="playAudio()" id="playButton" style="display: none;"></button>
+    </div>
+
+    <main>
+        <section class="felicidades">
+            <img src="media/v2.jpg" alt="">
+            <div class="text1">
+                <p>Feliz cumpleaños juan, espero que la puedas pasar muy bien hoy ,<span style="background-color: red;">ya q no estas con asma</span>, que puedas cumplir tus metas muy pronto
+                con (php) y que seas muy feliz</p>
+            </div>
+            <img src="media/sans.jpg" alt="">
+        </section>
+
+        <section class="gracias">
+            <img src="media/omori-omori-love.gif" alt="">
+            <div class="text1">
+                <p>Gracias por todo juan, por siempre estar por tus amigos y ofrecer muchas veces ayuda para lo que sea, es algo que se valora mucho
+                    y siempre estaremos agradecidos, gracias por ser buen amigo, te queremos mucho juancito
+                </p>
+            </div>
+            <img src="media/v2-v1.gif" alt="">
+        </section>
+    </main>
+
+    
+    <script>
+        var audio = document.getElementById("audio");
+        var muteButton = document.getElementById("muteButton");
+        var playButton = document.getElementById("playButton");
+      
+        function muteAudio() {
+          if (audio.paused) {
+            audio.play();
+            muteButton.innerHTML = "CAAAALLATEEEE";
+            playButton.style.display = "none";
+          } else {
+            audio.pause();
+            muteButton.innerHTML = "siga nomas";
+            playButton.style.display = "block";
+          }
+        }
+      
+        function playAudio() {
+          audio.play();
+          muteButton.innerHTML = "Callate";
+          playButton.style.display = "none";
+        }
+
+        document.querySelectorAll(".img-gato").forEach(function(imagen) {
+        imagen.addEventListener("mouseenter", reproducirSonido);
+        });
+
+        function reproducirSonido(event) {
+        var sonido = document.getElementById("sonido");
+        var rutaSonido = event.target.getAttribute("data-sonido");
+        sonido.src = rutaSonido;
+        sonido.currentTime = 0; // Reinicia el audio para que se reproduzca desde el principio
+        sonido.play();
+        }
+
+
+      </script>      
+</body>
+</html>
